@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="(item, index) in recommendList" :key="index">
+      <li class="item border-bottom" v-for="(item, index) in list" :key="index">
         <img class="item-img" :src="item.imgUrl">
         <div class="item-content">
           <p class="item-title">{{item.title}}</p>
@@ -17,29 +17,13 @@
 <script>
 export default {
   name: 'recommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1602/68/68aa05adb5315f9990.water.jpg_200x200_ce3d2658.jpg',
-          title: '八达岭野生动物园',
-          desc: '数百年的宫廷庙宇，至今依旧威严霸气'
-        },
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1602/68/68aa05adb5315f9990.water.jpg_200x200_ce3d2658.jpg',
-          title: '八达岭野生动物园',
-          desc: '数百年的宫廷庙宇，至今依旧威严霸气'
-        },
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1602/68/68aa05adb5315f9990.water.jpg_200x200_ce3d2658.jpg',
-          title: '八达岭野生动物园',
-          desc: '数百年的宫廷庙宇，至今依旧威严霸气'
-        }
-      ]
+  props: {
+    list: {
+      type: Array
     }
+  },
+  data () {
+    return {}
   }
 }
 </script>

@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="(item, index) in recommendList" :key="index">
+      <li class="item border-bottom" v-for="(item, index) in list" :key="index">
         <img class="item-img" :src="item.imgUrl">
         <div class="item-content">
           <p class="item-title">{{item.title}}</p>
@@ -16,29 +16,13 @@
 <script>
 export default {
   name: 'Weekend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg',
-          title: '八达岭野生动物园',
-          desc: '数百年的宫廷庙宇，至今依旧威严霸气'
-        },
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg',
-          title: '八达岭野生动物园',
-          desc: '数百年的宫廷庙宇，至今依旧威严霸气'
-        },
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg',
-          title: '八达岭野生动物园',
-          desc: '数百年的宫廷庙宇，至今依旧威严霸气'
-        }
-      ]
+  props: {
+    list: {
+      type: Array
     }
+  },
+  data () {
+    return {}
   }
 }
 </script>
@@ -50,7 +34,6 @@ export default {
     background:#EEEEEE
     font-size:12px
     text-indent: 0.2rem
-    margin-top:0.2rem
   .item
     .item-img
       width:100%
