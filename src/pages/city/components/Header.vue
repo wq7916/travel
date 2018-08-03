@@ -33,4 +33,5 @@ export default {
     .title
       font-size:0.32rem
       text-align: center
+
 </style>

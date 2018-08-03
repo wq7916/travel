@@ -35,7 +35,6 @@ export default {
         .then(this.getHomeInfoSuccess)
     },
     getHomeInfoSuccess (res) {
-      console.log(res.data)
       this.swiperList = res.data.data.swiperList
       this.iconList = res.data.data.iconList
       this.recommendList = res.data.data.recommendList
