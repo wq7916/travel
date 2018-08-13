@@ -42,6 +42,17 @@ export default {
     },
     listCity: {
       type: Object
+    },
+    letterHtml: {
+      type: String
+    }
+  },
+  watch: {
+    letterHtml () {
+      if (this.letterHtml) {
+        const element = this.$refs[this.letterHtml][0]
+        this.scroll.scrollToElement(element)
+      }
     }
   },
   mounted () {

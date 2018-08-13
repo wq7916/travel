@@ -3,9 +3,9 @@
     <Header></Header>
     <Search></Search>
     <keep-alive>
-      <List :hotCity="hotCity" :listCity="listCity"></List>
+      <List :hotCity="hotCity" :listCity="listCity" :letterHtml="letterHtml"></List>
     </keep-alive>
-    <Alphabet :listCity="listCity"></Alphabet>
+    <Alphabet :listCity="listCity" @letter="letter"></Alphabet>
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
   data () {
     return {
       listCity: {},
-      hotCity: []
+      hotCity: [],
+      letterHtml: ''
     }
   },
   mounted () {
@@ -37,6 +38,9 @@ export default {
         this.listCity = res.data.data.cities
         console.log(this.listCity)
       }
+    },
+    letter (innHtml) {
+      this.letterHtml = innHtml
     }
   },
   components: {
