@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" ref="search" v-show="keyWord">
       <ul>
-        <li class="item border-bottom" v-for="(item, index) in list" :key="index">{{item.name}}</li>
+        <li class="item border-bottom" v-for="(item, index) in list" :key="index" @click="handerCity(item.name)">{{item.name}}</li>
         <li class="item border-bottom" v-show="hasNoData">
           暂无数据
         </li>
@@ -59,6 +59,12 @@ export default {
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.search)
+  },
+  methods: {
+    handerCity (cityName) {
+      this.$store.dispatch('changeCity', cityName)
+      this.$router.push('/')
+    }
   }
 }
 </script>

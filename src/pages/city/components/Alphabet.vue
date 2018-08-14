@@ -72,7 +72,6 @@ export default {
     top:1.58rem
     bottom:0
     width:0.4rem
-    z-index:1000
     .item
       line-height:0.44rem
       text-align: center
